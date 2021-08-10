@@ -1,0 +1,132 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="Script.js"></script>
+    <link href="Styles.css" rel="stylesheet" />
+	
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  </head>
+  
+  <body ng-app="myModule">
+  <div ng-controller="myController">
+ <center><h2>Admin</h2></center>
+ <hr>
+<div class="container">
+<center><table></center>
+ <tr><td style="background-color:white">Apply:</td><td style="background-color:white">
+<div class="dropdown">
+  <button class="dropbtn">Dropdown</button>
+  <div class="dropdown-content"> 
+  <a href="#">Top 20 performers</a>
+  <a href="#">Branch wise Performance</a>
+  <a href="#">Pass out year wise</a></div></div></td></tr>
+  </table>
+ <!--<table> <caption><h3>Overall Performance</h3></caption>
+ <tr><th>Username</th>
+	<th>Hackerrank</th>
+	<th>Coechef</th>
+	<th>Codeforces</th>
+	<th>Total</th></tr> -->
+	<center><h3>Overall Performance</h3><p>(Click on the coloumn header to display Online judge wise)</P></center>
+	<center><table></center>
+            <thead>
+                <tr>
+                    <th>
+                        Username</th>
+                    <th>
+                        Branch</th>
+                    <th>
+                        Pass-out Year</th>
+                    <th ng-click="sortData('h')">
+                        Hackerrank <div ng-class="getSortClass('h')"></div>
+                    </th>
+					<th ng-click="sortData('ch')">
+                       Codechef <div ng-class="getSortClass('ch')"></div>
+                    </th>
+					<th ng-click="sortData('cf')">
+                       Codeforces <div ng-class="getSortClass('cf')"></div>
+                    </th>
+					<th ng-click="sortData('t')">
+                      Total<div ng-class="getSortClass('t')"></div>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="employee in employees | orderBy:sortColumn:reverseSort">
+                    <td> {{ employee.name }} </td>
+                    <td> {{ employee.branch}} </td>
+                    <td> {{ employee.year}} </td>
+                    <td> {{ employee.h}} </td>
+					<td> {{ employee.ch}} </td>
+					<td> {{ employee.cf}} </td>
+					<td> {{ employee.t}} </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<!-- report -->
+<center><b><i>Report on overall performance</i></b></center>
+<div style="background-color:#414a4c; color:white; width:70%; margin-left:15%" >
+abc<br>abc<br>abc<br>abc<br>abc<br>abc<br>abc<br>abc<br>abc<br>abc<br>abc<br>abc<br>abc<br>abc<br>abc<br>abc<br></div>
+<br><br>
+
+<!-- date wise performance  -->
+<div class="container">
+<center><b><i>Performance between specified time period</i></b></center>
+<center><table></center>
+ <tr><td style="background-color:white">
+To: <input type="date" name="to"></td><td style="background-color:white">
+ From:<input type="date" name="to"></td></tr>
+  </table><br>
+	<center><h3>Specified Period Performance</h3></center>
+	<table class="table table-striped">
+      <tr>
+        <th style="background-color:#00cccc;">Username</th>
+		<th  style="background-color:#00cccc;">Branch</th>
+        <th  style="background-color:#00cccc;">Pass out year</th>  
+        <th  style="background-color:#00cccc;">Hackerrank</th>
+        <th style="background-color:#00cccc;">Coechef</th>
+        <th style="background-color:#00cccc;">Codeforces</th>
+        <th style="background-color:#00cccc;">Total</th>  
+      </tr>
+	<tbody>
+	<tr><td>abc</td>
+	<td>CSE</td>
+	<td>2022</td>
+	<td>111</td>
+	<td>222</td>
+	<td>333</td><td>666</td></tr>
+	<tr><td>abc</td>
+	<td>CSE</td>
+	<td>2022</td>
+	<td>111</td>
+	<td>222</td>
+	<td>333</td><td>666</td></tr>
+	<tr><td>abc</td>
+	<td>CSE</td>
+	<td>2022</td>
+	<td>111</td>
+	<td>222</td>
+	<td>333</td><td>666</td></tr>
+	<tr><td>abc</td>
+	<td>CSE</td>
+	<td>2022</td>
+	<td>111</td>
+	<td>222</td>
+	<td>333</td><td>666</td></tr>
+	<tr><td>abc</td>
+	<td>CSE</td>
+	<td>2022</td>
+	<td>111</td>
+	<td>222</td>
+	<td>333</td><td>666</td></tr>
+	</tbody>
+</table>
+</div>
+</div>
+</body>
+</html>
